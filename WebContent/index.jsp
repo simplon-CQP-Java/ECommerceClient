@@ -19,6 +19,9 @@
 				<div class="acheter">
 					<span>ACHETER</span>
 				</div>
+				<div>
+					<h2>Panier</h2>
+				</div>
 			</div>
 		</div>
 	</div>
