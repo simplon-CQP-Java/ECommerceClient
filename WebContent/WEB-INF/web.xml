@@ -16,6 +16,14 @@
     <servlet-name>Catalogue</servlet-name>
     <servlet-class>com.ECommerceClient.jsp.servlet.Catalogue</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>AjouterArticle</servlet-name>
+    <servlet-class>com.ECommerceClient.jsp.servlet.AjouterArticle</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AjouterArticle</servlet-name>
+    <url-pattern>/AjouterArticle</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>Catalogue</servlet-name>
     <url-pattern>/Catalogue</url-pattern>
