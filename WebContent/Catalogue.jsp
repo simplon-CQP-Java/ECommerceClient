@@ -10,15 +10,18 @@
 		<div class="catalogue">
 			<h2>Catalogue</h2>
 			<div class="articles">
-				<div class="article">
-					<h3>Nom de l'article</h3>
-					<div class="content">
-						<span class="prix">42€</span> <span class="remise">(-5€)</span>
+				<c:forEach var="article" items="${requestScope.liste}" varStatus="status"> 
+		            <div class="article">
+						<h3>Nom de l'article</h3>
+						<div class="content">
+							<span class="prix">42€</span> <span class="remise">(-5€)</span>
+						</div>
+						<a class="acheter" href="Selection?indice=${status.index}">${article}</a>
+						<form class="acheter" action="AcheterArticle" method="POST">
+							<button type="submit" value="acheter">ACHETER</button>
+						</form>
 					</div>
-					<form class="acheter" action="AcheterArticle" method="POST">
-						<button type="submit" value="acheter">ACHETER</button>
-					</form>
-				</div>
+		        </c:forEach>
 			</div>
 		</div>
 	</body>

@@ -2,6 +2,8 @@ package com.ECommerceClient.jsp.servlet;
 
 import java.io.IOException;
 
+import metier.ArticleService;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,6 +25,12 @@ public class Catalogue extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+    private ArticleService service;
+    
+    public void init() {
+    	service = new ArticleService();
+    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -39,6 +47,10 @@ public class Catalogue extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
+		
+		// Set liste attribute
+		Article[] catalogue=service.getCatalogue();
+		request.setAttribute("liste", catalogue);
 		
 		RequestDispatcher dispatch = request.getRequestDispatcher("Catalogue.jsp");
 		dispatch.forward( request, response );
