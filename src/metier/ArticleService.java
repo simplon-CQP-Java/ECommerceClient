@@ -2,8 +2,6 @@ package metier;
 
 import java.util.ArrayList;
 
-import domaine.Article;
-
 public class ArticleService {
 	private ArrayList<Article> catalogue = new ArrayList<>();
 
@@ -17,7 +15,7 @@ public class ArticleService {
 		catalogue.add(article3);
 	}
 
-	ArrayList<Article> getCatalogue() {
+	public ArrayList<Article> getCatalogue() {
 		return catalogue;
 
 	}

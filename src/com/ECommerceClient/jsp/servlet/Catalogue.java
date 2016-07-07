@@ -1,7 +1,9 @@
 package com.ECommerceClient.jsp.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import metier.Article;
 import metier.ArticleService;
 
 import javax.servlet.RequestDispatcher;
@@ -49,7 +51,7 @@ public class Catalogue extends HttpServlet {
 		response.setContentType("text/html");
 		
 		// Set liste attribute
-		Article[] catalogue=service.getCatalogue();
+		ArrayList<Article> catalogue=service.getCatalogue();
 		request.setAttribute("liste", catalogue);
 		
 		RequestDispatcher dispatch = request.getRequestDispatcher("Catalogue.jsp");
